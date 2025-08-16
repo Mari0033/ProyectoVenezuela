@@ -1,102 +1,167 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #fff3b0, #b0d7ff, #ffb0b0);
-      color: #2d3436;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venezuela</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
 
-    header {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 30px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
+        /* Banner principal */
+        .banner {
+            background-image: url('https://www.iadb.org/sites/default/files/styles/landscape_2x1_768000_768x384_100/public/2023-03/1.6.26-banner-BID-Venezuela-500750930.jpg?h=b6cd0f36&itok=vPlAtpp0');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+            color: white;
+        }
 
-    h1 {
-      font-size: 2.8em;
-      color: #d63031;
-      margin-bottom: 5px;
-    }
+        .banner h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            background: linear-gradient(to right, #FFD700, #0000CD, #FF0000); /* Cores da bandeira */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    h2 {
-      color: #2d3436;
-    }
+        /* Índice */
+        .indice {
+            padding: 30px;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
 
-    .conteudo {
-      max-width: 800px;
-      margin: 40px auto;
-      background-color: white;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    }
+        .indice h2 {
+            margin-bottom: 20px;
+        }
 
-    section {
-      margin-bottom: 30px;
-      text-align: left;
-    }
+        .indice a {
+            display: inline-block;
+            margin: 10px 15px;
+            text-decoration: none;
+            color: #003366;
+            font-weight: bold;
+        }
 
-    img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
+        .indice a:hover {
+            text-decoration: underline;
+        }
 
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      background-color: #f1f2f6;
-    }
-  </style>
+        /* Seções */
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        section h2 {
+            color: #003366;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .imagem-exemplo {
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #eee;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>¡Conozca las maravillas culturales de Venezuela!</h1>
-    <p>Descubre la cultura, los sabores y los paisajes increíbles de este país sudamericano.</p>
-  </header>
+    <!-- Banner com imagem -->
+    <div class="banner">
+        <h1>Venezuela</h1>
+    </div>
 
-  <div class="conteudo">
+    <!-- Índice de Tópicos -->
+    <div class="indice">
+        <h2>Índice</h2>
+        <a href="#introducao">Introdução</a>
+        <a href="#lingua">Língua Falada</a>
+        <a href="#pontos">Pontos Turísticos</a>
+        <a href="#comidas">Comidas Típicas</a>
+        <a href="#musica">Música e Dança</a>
+        <a href="#festas">Festas Típicas</a>
+        <a href="#arte">Arte</a>
+        <a href="#religiao">Religião</a>
+        <a href="#curiosidades">Curiosidades</a>
+    </div>
 
-    <section>
-      <h2>🇻🇪 Bandera de Venezuela</h2>
-      <p>La bandera venezolana tiene tres franjas horizontales: amarilla, azul y roja, con estrellas blancas en el centro.</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Flag_of_Venezuela.svg/1280px-Flag_of_Venezuela.svg.png" alt="Bandera de Venezuela">
+    <!-- Seções -->
+    <section id="introducao">
+        <h2>Introdução</h2>
+        <p>[Espaço para texto sobre a introdução à Venezuela]</p>
+        <img src="[URL da imagem opcional]" alt="Imagem de introdução" class="imagem-exemplo">
     </section>
 
-    <section>
-      <h2>🌆 Lugares turísticos</h2>
-      <p>Venezuela cuenta con paisajes naturales impresionantes, como:</p>
-      <ul>
-        <li>Salto Ángel – la cascada más alta del mundo</li>
-        <li>Archipiélago Los Roques – un paraíso caribeño</li>
-        <li>Tepuy Roraima – una formación rocosa única</li>
-      </ul>
-      <img src="https://360go.com.br/wp-content/uploads/2019/02/Angel-Falls-1000x625.jpg" alt="Salto Ángel">
+    <section id="lingua">
+        <h2>Língua Falada</h2>
+        <p>[Espaço para texto sobre a língua falada na Venezuela]</p>
+        <img src="[URL da imagem opcional]" alt="Imagem sobre língua" class="imagem-exemplo">
     </section>
 
-    <section>
-      <h2>🍽️ Comida típica</h2>
-      <p>La gastronomía venezolana es variada, colorida y deliciosa. Algunos platos tradicionales son:</p>
-      <ul>
-        <li>Arepas – pan de maíz relleno</li>
-        <li>Hallacas – masa de maíz con guiso, envuelta en hojas</li>
-        <li>Pabellón criollo – arroz, carne mechada, caraotas negras y plátano frito</li>
-      </ul>
-      <img src="https://s2.glbimg.com/NEC09DBSo91jV9I8X0OxMQ9BMOQ=/i.glbimg.com/og/ig/infoglobo1/f/original/2018/03/27/29468939_223960995013703_5816775402697261056_n.jpg" alt="Arepas venezolanas">
+    <section id="pontos">
+        <h2>Pontos Turísticos</h2>
+        <p>[Espaço para texto sobre pontos turísticos da Venezuela]</p>
+        <img src="[URL da imagem opcional]" alt="Imagem de ponto turístico" class="imagem-exemplo">
     </section>
 
-  </div>
+    <section id="comidas">
+        <h2>Comidas Típicas</h2>
+        <p>[Espaço para texto sobre comidas típicas da Venezuela]</p>
+        <img src="[URL da imagem opcional]" alt="Imagem de comida" class="imagem-exemplo">
+    </section>
 
-  <footer>
-    <p>&copy; 2025 - Conociendo Venezuela | Creado con HTML + GitHub Pages</p>
-  </footer>
+    <section id="musica">
+        <h2>Música e Dança</h2>
+        <p>[Espaço para texto sobre música e dança na Venezuela]</p>
+        <img src="[URL da imagem opcional]" alt="Imagem de música e dança" class="imagem-exemplo">
+    </section>
+
+    <section id="festas">
+        <h2>Festas Típicas</h2>
+        <p>[Espaço para texto sobre festas típicas na Venezuela]</p>
+        <img src="[URL da imagem opcional]" alt="Imagem de festa" class="imagem-exemplo">
+    </section>
+
+    <section id="arte">
+        <h2>Arte</h2>
+        <p>[Espaço para texto sobre a arte venezuelana]</p>
+        <img src="[URL da imagem opcional]" alt="Imagem de arte" class="imagem-exemplo">
+    </section>
+
+    <section id="religiao">
+        <h2>Religião</h2>
+        <p>[Espaço para texto sobre a religião na Venezuela]</p>
+        <img src="[URL da imagem opcional]" alt="Imagem religiosa" class="imagem-exemplo">
+    </section>
+
+    <section id="curiosidades">
+        <h2>Curiosidades</h2>
+        <p>[Espaço para curiosidades sobre a Venezuela]</p>
+        <img src="[URL da imagem opcional]" alt="Imagem curiosa" class="imagem-exemplo">
+    </section>
+
+    <footer>
+        <p>Site sobre a Venezuela - Feito por [Seu Nome]</p>
+    </footer>
 
 </body>
 </html>
