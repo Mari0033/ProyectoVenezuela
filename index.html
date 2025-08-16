@@ -3,180 +3,172 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Banner Venezuela</title>
+  <title>Venezuela</title>
   <style>
-    body, html {
-      margin: 0; 
-      padding: 0; 
-      height: 100%;
+    body {
+      margin: 0;
       font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
     }
+
+    /* Banner principal */
     .banner {
-      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1714594923299-e915b7d71701?fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&ixlib=rb-4.0.3&q=60&w=3000');
+      background-size: cover;
+      background-position: center;
       height: 100vh;
-      overflow: hidden;
+      position: relative;
       color: white;
-    }
-    .banner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.7);
     }
     .banner h1 {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 6em;
-      font-weight: bold;
-      background: linear-gradient(to right, #FFD700cc, #0000CDcc, #FF0000cc); /* Amarelo, azul e vermelho com transparência */
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+      font-size: 5em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
       user-select: none;
       white-space: nowrap;
+      background: none;
+      -webkit-background-clip: initial;
+      -webkit-text-fill-color: initial;
+    }
+    .banner h1 span:nth-child(1) {
+      color: #FFD700; /* amarelo */
+    }
+    .banner h1 span:nth-child(2) {
+      color: #0000CD; /* azul */
+    }
+    .banner h1 span:nth-child(3) {
+      color: #FF0000; /* vermelho */
+    }
+
+    /* Índice */
+    .indice {
+      padding: 30px;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+    .indice h2 {
+      margin-bottom: 20px;
+    }
+    .indice a {
+      display: inline-block;
+      margin: 10px 15px;
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+    }
+    .indice a:hover {
+      text-decoration: underline;
+    }
+
+    /* Seções */
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      color: #003366;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+    }
+    .imagem-exemplo {
+      width: 100%;
+      height: auto;
+      margin: 20px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eee;
     }
   </style>
 </head>
 <body>
+
+  <!-- Banner com imagem -->
   <div class="banner">
-    <img src="https://images.unsplash.com/photo-1714594923299-e915b7d71701?fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&ixlib=rb-4.0.3&q=60&w=3000" alt="Cidade de Caracas, Venezuela" />
-    <h1>Venezuela</h1>
+    <h1>
+      <span>Ven</span><span>ezu</span><span>ela</span>
+    </h1>
   </div>
-</body>
-</html>
-        }
 
-        /* Índice */
-        .indice {
-            padding: 30px;
-            background-color: #f2f2f2;
-            text-align: center;
-        }
+  <!-- Índice de Tópicos -->
+  <div class="indice">
+    <h2>Índice</h2>
+    <a href="#introducao">Introdução</a>
+    <a href="#lingua">Língua Falada</a>
+    <a href="#pontos">Pontos Turísticos</a>
+    <a href="#comidas">Comidas Típicas</a>
+    <a href="#musica">Música e Dança</a>
+    <a href="#festas">Festas Típicas</a>
+    <a href="#arte">Arte</a>
+    <a href="#religiao">Religião</a>
+    <a href="#curiosidades">Curiosidades</a>
+  </div>
 
-        .indice h2 {
-            margin-bottom: 20px;
-        }
+  <!-- Seções -->
+  <section id="introducao">
+    <h2>Introdução</h2>
+    <p>[Espaço para texto sobre a introdução à Venezuela]</p>
+    <img src="[URL da imagem opcional]" alt="Imagem de introdução" class="imagem-exemplo" />
+  </section>
 
-        .indice a {
-            display: inline-block;
-            margin: 10px 15px;
-            text-decoration: none;
-            color: #003366;
-            font-weight: bold;
-        }
+  <section id="lingua">
+    <h2>Língua Falada</h2>
+    <p>[Espaço para texto sobre a língua falada na Venezuela]</p>
+    <img src="[URL da imagem opcional]" alt="Imagem sobre língua" class="imagem-exemplo" />
+  </section>
 
-        .indice a:hover {
-            text-decoration: underline;
-        }
+  <section id="pontos">
+    <h2>Pontos Turísticos</h2>
+    <p>[Espaço para texto sobre pontos turísticos da Venezuela]</p>
+    <img src="[URL da imagem opcional]" alt="Imagem de ponto turístico" class="imagem-exemplo" />
+  </section>
 
-        /* Seções */
-        section {
-            padding: 60px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+  <section id="comidas">
+    <h2>Comidas Típicas</h2>
+    <p>[Espaço para texto sobre comidas típicas da Venezuela]</p>
+    <img src="[URL da imagem opcional]" alt="Imagem de comida" class="imagem-exemplo" />
+  </section>
 
-        section h2 {
-            color: #003366;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 10px;
-        }
+  <section id="musica">
+    <h2>Música e Dança</h2>
+    <p>[Espaço para texto sobre música e dança na Venezuela]</p>
+    <img src="[URL da imagem opcional]" alt="Imagem de música e dança" class="imagem-exemplo" />
+  </section>
 
-        .imagem-exemplo {
-            width: 100%;
-            height: auto;
-            margin: 20px 0;
-        }
+  <section id="festas">
+    <h2>Festas Típicas</h2>
+    <p>[Espaço para texto sobre festas típicas na Venezuela]</p>
+    <img src="[URL da imagem opcional]" alt="Imagem de festa" class="imagem-exemplo" />
+  </section>
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #eee;
-        }
-    </style>
-</head>
-<body>
+  <section id="arte">
+    <h2>Arte</h2>
+    <p>[Espaço para texto sobre a arte venezuelana]</p>
+    <img src="[URL da imagem opcional]" alt="Imagem de arte" class="imagem-exemplo" />
+  </section>
 
-    <!-- Banner com imagem -->
-    <div class="banner">
-        <h1>Venezuela</h1>
-    </div>
+  <section id="religiao">
+    <h2>Religião</h2>
+    <p>[Espaço para texto sobre a religião na Venezuela]</p>
+    <img src="[URL da imagem opcional]" alt="Imagem religiosa" class="imagem-exemplo" />
+  </section>
 
-    <!-- Índice de Tópicos -->
-    <div class="indice">
-        <h2>Índice</h2>
-        <a href="#introducao">Introdução</a>
-        <a href="#lingua">Língua Falada</a>
-        <a href="#pontos">Pontos Turísticos</a>
-        <a href="#comidas">Comidas Típicas</a>
-        <a href="#musica">Música e Dança</a>
-        <a href="#festas">Festas Típicas</a>
-        <a href="#arte">Arte</a>
-        <a href="#religiao">Religião</a>
-        <a href="#curiosidades">Curiosidades</a>
-    </div>
+  <section id="curiosidades">
+    <h2>Curiosidades</h2>
+    <p>[Espaço para curiosidades sobre a Venezuela]</p>
+    <img src="[URL da imagem opcional]" alt="Imagem curiosa" class="imagem-exemplo" />
+  </section>
 
-    <!-- Seções -->
-    <section id="introducao">
-        <h2>Introdução</h2>
-        <p>[Espaço para texto sobre a introdução à Venezuela]</p>
-        <img src="[URL da imagem opcional]" alt="Imagem de introdução" class="imagem-exemplo">
-    </section>
-
-    <section id="lingua">
-        <h2>Língua Falada</h2>
-        <p>[Espaço para texto sobre a língua falada na Venezuela]</p>
-        <img src="[URL da imagem opcional]" alt="Imagem sobre língua" class="imagem-exemplo">
-    </section>
-
-    <section id="pontos">
-        <h2>Pontos Turísticos</h2>
-        <p>[Espaço para texto sobre pontos turísticos da Venezuela]</p>
-        <img src="[URL da imagem opcional]" alt="Imagem de ponto turístico" class="imagem-exemplo">
-    </section>
-
-    <section id="comidas">
-        <h2>Comidas Típicas</h2>
-        <p>[Espaço para texto sobre comidas típicas da Venezuela]</p>
-        <img src="[URL da imagem opcional]" alt="Imagem de comida" class="imagem-exemplo">
-    </section>
-
-    <section id="musica">
-        <h2>Música e Dança</h2>
-        <p>[Espaço para texto sobre música e dança na Venezuela]</p>
-        <img src="[URL da imagem opcional]" alt="Imagem de música e dança" class="imagem-exemplo">
-    </section>
-
-    <section id="festas">
-        <h2>Festas Típicas</h2>
-        <p>[Espaço para texto sobre festas típicas na Venezuela]</p>
-        <img src="[URL da imagem opcional]" alt="Imagem de festa" class="imagem-exemplo">
-    </section>
-
-    <section id="arte">
-        <h2>Arte</h2>
-        <p>[Espaço para texto sobre a arte venezuelana]</p>
-        <img src="[URL da imagem opcional]" alt="Imagem de arte" class="imagem-exemplo">
-    </section>
-
-    <section id="religiao">
-        <h2>Religião</h2>
-        <p>[Espaço para texto sobre a religião na Venezuela]</p>
-        <img src="[URL da imagem opcional]" alt="Imagem religiosa" class="imagem-exemplo">
-    </section>
-
-    <section id="curiosidades">
-        <h2>Curiosidades</h2>
-        <p>[Espaço para curiosidades sobre a Venezuela]</p>
-        <img src="[URL da imagem opcional]" alt="Imagem curiosa" class="imagem-exemplo">
-    </section>
-
-    <footer>
-        <p>Site sobre a Venezuela - Hecho por Alanis, Daniel, Maria e Natasha - 1i</p>
-    </footer>
+  <footer>
+    <p>Site sobre a Venezuela - Hecho por Alanis, Daniel, Maria e Natasha</p>
+  </footer>
 
 </body>
 </html>
