@@ -2,79 +2,192 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Venezuela</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conociendo Venezuela</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
       scroll-behavior: smooth;
     }
 
-    /* Banner principal */
-    .banner {
-      background-image: url('https://images.unsplash.com/photo-1714594923299-e915b7d71701?fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&ixlib=rb-4.0.3&q=60&w=3000');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      position: relative;
+    /* Estilo para a seta de voltar ao topo */
+    .voltar-topo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #003366;
+      color: white;
+      font-size: 28px;
+      padding: 10px 15px;
+      border-radius: 50%;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      z-index: 999;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .voltar-topo:hover {
+      background-color: #0055aa;
+      transform: scale(1.1);
+    }
+
+    /* Estilo para a seção inicial */
+    .capa {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    /* Links com borda e animação */
+    .linha-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 10px 0;
+      gap: 10px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .linha-links a {
+      padding: 15px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      border: 2px solid #f8c8c8;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 110px;
       color: white;
     }
-    .banner h1 {
-      position: absolute;
-      top: 35%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 8em; /* Aumentei aqui */
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-      user-select: none;
-      white-space: nowrap;
-      background: none;
-      -webkit-background-clip: initial;
-      -webkit-text-fill-color: initial;
+
+    /* Links superiores: azul */
+    .linha-links.topo a {
+      background-color: #003366;
     }
-    .banner h1 span:nth-child(1) {
-      color: #FFD700; /* amarelo */
-    }
-    .banner h1 span:nth-child(2) {
-      color: #0000CD; /* azul */
-    }
-    .banner h1 span:nth-child(3) {
-      color: #FF0000; /* vermelho */
+    .linha-links.topo a:hover {
+      background-color: #0055aa;
+      box-shadow: 0 0 8px 2px rgba(248, 200, 200, 0.6);
+      transform: scale(1.05);
+      z-index: 10;
     }
 
-    /* Índice */
-    .indice {
-      padding: 30px;
-      background-color: #f2f2f2;
+    /* Links inferiores: vermelho */
+    .linha-links.baixo a {
+      background-color: #cc0000;
+    }
+    .linha-links.baixo a:hover {
+      background-color: #e60000;
+      box-shadow: 0 0 8px 2px rgba(255, 100, 100, 0.6);
+      transform: scale(1.05);
+      z-index: 10;
+    }
+
+    /* Bloco central */
+    .bloco-central {
+      display: flex;
+      width: 90%;
+      max-width: 1200px;
+      height: 400px;
+      margin: 20px 0;
+      gap: 10px;
+    }
+
+    .imagem-retangulo {
+      flex: 3;
+      background-image: url('https://images.unsplash.com/photo-1714594923299-e915b7d71701?fm=jpg&q=80&w=1200');
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px 0 0 12px;
+      border: 2px solid #f8c8c8;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .imagem-retangulo:hover {
+      box-shadow: 0 0 15px 5px rgba(248, 200, 200, 0.7);
+      transform: scale(1.03);
+      z-index: 10;
+    }
+
+    .texto-quadrado {
+      flex: 1;
+      background-color: #FFCC00;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-    }
-    .indice h2 {
-      margin-bottom: 20px;
-    }
-    .indice a {
-      display: inline-block;
-      margin: 10px 15px;
-      text-decoration: none;
-      color: #003366;
-      font-weight: bold;
-    }
-    .indice a:hover {
-      text-decoration: underline;
+      border-radius: 0 12px 12px 0;
+      border: 2px solid #f8c8c8;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      padding: 10px;
     }
 
-    /* Seções */
+    .texto-quadrado:hover {
+      box-shadow: 0 0 15px 5px rgba(248, 200, 200, 0.7);
+      transform: scale(1.03);
+      z-index: 10;
+    }
+
+    .texto-quadrado h1 {
+      font-size: 2.2em;
+      color: #003366;
+      line-height: 1.2;
+      user-select: none;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .bloco-central {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .imagem-retangulo, .texto-quadrado {
+        width: 100%;
+        border-radius: 12px;
+        height: 250px;
+      }
+
+      .texto-quadrado {
+        border-radius: 0 0 12px 12px;
+      }
+
+      .linha-links a {
+        min-width: unset;
+        flex: 1 1 100%;
+      }
+    }
+
+    /* Conteúdo geral */
     section {
       padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
+    } 
+    section p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      text-align: justify;
     }
+
     section h2 {
       color: #003366;
       margin-bottom: 20px;
       border-bottom: 2px solid #ccc;
       padding-bottom: 10px;
     }
+
     .imagem-exemplo {
       width: 100%;
       height: auto;
@@ -88,87 +201,179 @@
     }
   </style>
 </head>
-<body>
 
-  <!-- Banner com imagem -->
-  <div class="banner">
-    <h1>
-      <span>Ven</span><span>ezu</span><span>ela</span>
-    </h1>
-  </div>
+<!-- Adicionado id="top" aqui -->
+<body id="top">
 
-  <!-- Índice de Tópicos -->
-  <div class="indice">
-    <h2>Índice</h2>
-    <a href="#introducao">Introdução</a>
-    <a href="#lingua">Língua Falada</a>
-    <a href="#pontos">Pontos Turísticos</a>
-    <a href="#comidas">Comidas Típicas</a>
-    <a href="#musica">Música e Dança</a>
-    <a href="#festas">Festas Típicas</a>
-    <a href="#arte">Arte</a>
-    <a href="#religiao">Religião</a>
-    <a href="#curiosidades">Curiosidades</a>
-  </div>
+    <!-- Seção de capa -->
+  <section class="capa">
+
+    <!-- Links Acima -->
+    <div class="linha-links topo">
+      <a href="#introducción">Introducción</a>
+      <a href="#lengua hablada">Lengua hablada</a>
+      <a href="#atracciones turísticas">Atracciones turísticas</a>
+      <a href="#gastronomía">Gastronomía</a>
+    </div>
+
+    <!-- Bloco Central -->
+    <div class="bloco-central">
+      <div class="imagem-retangulo"></div>
+      <div class="texto-quadrado">
+        <h1>Conociendo<br> Venezuela</h1>
+      </div>
+    </div>
+
+    <!-- Links Abaixo -->
+    <div class="linha-links baixo">
+      <a href="#música y danza">Música y danza</a>
+      <a href="#festivales">Festivales</a>
+      <a href="#arte">Arte</a>
+      <a href="#religión">Religión</a>
+      <a href="#curiosidades">Curiosidades</a>
+    </div>
+  </section>
 
   <!-- Seções -->
-  <section id="introducao">
-    <h2>Introdução</h2>
-    <p>[Espaço para texto sobre a introdução à Venezuela]</p>
-    <img src="[URL da imagem opcional]" alt="Imagem de introdução" class="imagem-exemplo" />
+  <section id="introducción">
+    <h2>Introducción</h2>
+    <p>En 1499, Alonso de Ojeda exploró la zona americana con mayor detalle, navegando por el Caribe hasta el lago de Maracaibo. Al ver las casas indígenas construidas sobre pilotes, las comparó con la ciudad italiana de Venecia y llamó a la región "Venezuela" (Pequeña Venecia).</p>
+    <p>La región fue colonizada por los españoles a partir de 1522 y declaró su independencia el 5 de julio de 1811, aunque esta no se consolidó hasta 1830, tras la separación de la Gran Colombia. La lucha estuvo marcada por intensos conflictos entre patriotas y realistas, así como por la resistencia indígena, con <u>Simón Bolívar</u> y Francisco de Miranda como líderes centrales.
+La liberación de <u>Caracas</u> en 1813 fue un paso decisivo en esta lucha. Tras las batallas, Venezuela conquistó su soberanía y comenzó su trayectoria como nación independiente.</p> 
+    <p>La bandera venezolana tiene tres colores principales: el <strong>amarillo</strong> simboliza las riquezas naturales del país, el <strong>azul</strong> simboliza el océano que los separa de España y el <strong>rojo</strong> simboliza la sangre de aquellos que lucharon por su independencia. Las ocho estrellas de la bandera aluden a las siete provincias que formaban Venezuela, contando una octava estrella en homenaje a Simón Bolívar.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Flag_of_Venezuela_%28state%29.svg/800px-Flag_of_Venezuela_%28state%29.svg.png" alt="Imagem de introdução" class="imagem-exemplo" />
   </section>
 
-  <section id="lingua">
-    <h2>Língua Falada</h2>
-    <p>[Espaço para texto sobre a língua falada na Venezuela]</p>
-    <img src="[URL da imagem opcional]" alt="Imagem sobre língua" class="imagem-exemplo" />
+  <section id="lengua hablada">
+    <h2>Lengua hablada</h2>
+    <p>El idioma que se habla mayoritariamente en Venezuela es el <strong>español</strong>. También hay lenguas indígenas, como las de los pueblos wayuu, warao y yanomam.</p>
+    <p>En el español venezolano, a menudo desaparece la "d", como en cansado (pronunciación: kan ' sao). Especialmente en las zonas costeras, también hay influencia inglesa-caribeña, por parte de islas como Trinidad.</p>
+    <p>Este idioma se caracteriza por una <u>musicalidad</u> y alegría únicas, que expresan la marcada <u>personalidad</u> de sus habitantes.</p>
+  </section>
+  <section id="atracciones turísticas">
+    <h2>Atracciones turísticas</h2>
+    <p>Venezuela es un país con una <u>diversidad natural</u> extraordinaria y una rica <u>cultura</u>, que ofrece al visitante una experiencia única e inolvidable. Su territorio es un mosaico de <u>paisajes</u> majestuosos, donde la naturaleza se manifiesta con fuerza y belleza en cada rincón, convirtiéndolo en un destino que sorprende y enamora.</p>
+    <p><strong>Salto Ángel:</strong> La cascada más alta del mundo, con una altura de 979 metros. Situada en el Parque Nacional Canaima, en la región de Gran Sabana, es uno de los destinos más emblemáticos de Venezuela.</p>
+    <img src="https://media-cdn.sygictraveldata.com/media/800x600/612664395a40232133447d33247d383732353233333634" class="imagem-exemplo" />
+    <p></p>
+    <p><strong>Playa El Agua:</strong> Es una playa situada en la isla de Margarita, conocida por sus aguas cristalinas y su arena blanca. Es una de las playas más famosas y populares de la isla, y ofrece diversas opciones de restaurantes, bares y actividades deportivas.</p>
+    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/ba/79/19/playa-el-agua.jpg?w=1200&h=-1&s=1" alt="Imagem de ponto turístico" class="imagem-exemplo" />
+    <p></p>
+    <p><strong>Museo de Arte Contemporáneo de Caracas:</strong> El museo es un importante centro cultural de la ciudad, conocido por su variada colección de arte moderno y contemporáneo, además de sus actividades educativas y exposiciones temporales. El museo, con entrada gratuita, también cuenta con una biblioteca y un valioso archivo documental para la investigación.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Interior_Galeria_Arte_Nacional_%28Caracas%29.jpg" alt="Imagem de ponto turístico" class="imagem-exemplo" />
+    <p></p>
+    <p><strong>Sambil Caracas:</strong> El centro comercial más grande de Venezuela, situado en Caracas. Además de tiendas y restaurantes, Sambil ofrece una serie de opciones de entretenimiento, como cines y un parque de atracciones.</p>
+    <img src="https://i.pinimg.com/736x/37/b8/58/37b8589a7fbfa11497c1585d66d9eaf7.jpg" alt="sambil" class="imagem-exemplo" />
   </section>
 
-  <section id="pontos">
-    <h2>Pontos Turísticos</h2>
-    <p>[Espaço para texto sobre pontos turísticos da Venezuela]</p>
-    <img src="[URL da imagem opcional]" alt="Imagem de ponto turístico" class="imagem-exemplo" />
+  <section id="gastronomía">
+    <h2>Gastronomía</h2>
+  <p>La cocina típica venezolana es rica en sabor y variedad, con platos destacados como las arepas, el pabellón criollo y las hallacas. Estos platos son solo la punta del iceberg de una cocina diversa, llena de influencias indígenas, africanas y europeas.</p>
+     <p><strong>Arepa:</strong> Panes versátiles de harina de maíz que se pueden rellenar con cualquier ingrediente, desde queso hasta carne desmenuzada o pollo.</p>
+  <img src="https://i0.wp.com/isasousa.com/wp-content/uploads/2025/07/Arepa-de-Carne-Desfiada-Caseira-A-Receita-Venezuelana-que-Virou-Lenda.jpg?fit=1024%2C768&ssl=1" alt="Arepa venezuelana" class="imagem-exemplo" />
+
+  <p><strong>Pabellón Criollo:</strong> Una combinación de arroz blanco, carne desmenuzada, frijoles negros y tajadas (plátano frito).</p>
+  <img src="https://cosmoappliances.com/wp-content/uploads/2023/08/Untitled-design-38.png" alt="Pabellón Criollo" class="imagem-exemplo" />
+
+  <p><strong>Hallaca:</strong> Un plato navideño, una especie de tamal hecho con masa de maíz, relleno de carne, pollo, cerdo, aceitunas, alcaparras y pasas, envuelto en hojas de plátano.</p>
+  <img src="https://www.comidaereceitas.com.br/wp-content/uploads/2010/07/Hallacas-freepik.jpg" alt="Hallaca venezuelana" class="imagem-exemplo" />
+
+  <p><strong>Papelón con limón:</strong> Bebida refrescante tradicional, elaborada con papelón (también conocido como panela o piloncillo) y zumo de limón, a la que se le añade agua y hielo.</p>
+  <img src="https://cdn0.recetasgratis.net/es/posts/3/4/1/papelon_con_limon_78143_orig.jpg" alt="Papelón con limón" class="imagem-exemplo" />
+
+</section>
+
+  <section id="música y danza">
+    <h2>Música y danza</h2>
+    <p>En Venezuela se escucha una gran variedad de géneros musicales, tanto tradicionales como populares. La música venezolana abarca desde ritmos autóctonos como el joropo, la gaita zuliana y el tambor venezolano, hasta géneros internacionales como la salsa y el merengue que son populares en toda la región caribeña. Además, la influencia de la música andina y otros estilos regionales también es notable. </p>
+    <p><strong>Joropo:</strong> Género musical y baile tradicional de Los Llanos venezolanos, considerado uno de los más representativos del país. Se canta en coplas o contrapunteos y se acompaña con arpa o bandola, cuatro y maracas. Se baila en pareja con pasos rápidos y enérgicos, y presenta variantes en distintas regiones de Venezuela.</p>
+    <iframe width="560" height="315" 
+  src="https://www.youtube.com/embed/9k20BDOJC24" 
+  title="joropo" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
+    <p></p>
+    <p><strong>Gaita zuliana:</strong> Género musical originario del estado Zulia, muy ligado a la Navidad en Venezuela. Se interpreta con cuatro, maracas, furro, charrasca y tambora, con una voz principal y coro. Sus letras abordan temas como amor, fiestas, Navidad, crítica social y protesta. Presenta variantes según la localidad y los instrumentos usados, como la Gaita de Furro o de Tambora.</p>
+<iframe width="560" height="315" 
+  src="https://www.youtube.com/embed/0yAHuusciJ4" 
+  title="gaita zuliana" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
+    <p></p>
+    <p><strong>Tambores de la costa:</strong> Género musical de las costas centrales de Venezuela, de origen africano. Se basa en percusiones, con canto de solista y coro. Sus letras tratan sobre amor, diversión, religión y vida cotidiana. El baile, enérgico y en pareja, se realiza dentro de un círculo de bailarines.</p>
+<iframe width="560" height="315" 
+  src="https://www.youtube.com/embed/5J2tpz_3QNE" 
+  title="tambores" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
   </section>
 
-  <section id="comidas">
-    <h2>Comidas Típicas</h2>
-    <p>[Espaço para texto sobre comidas típicas da Venezuela]</p>
-    <img src="[URL da imagem opcional]" alt="Imagem de comida" class="imagem-exemplo" />
-  </section>
-
-  <section id="musica">
-    <h2>Música e Dança</h2>
-    <p>[Espaço para texto sobre música e dança na Venezuela]</p>
-    <img src="[URL da imagem opcional]" alt="Imagem de música e dança" class="imagem-exemplo" />
-  </section>
-
-  <section id="festas">
-    <h2>Festas Típicas</h2>
-    <p>[Espaço para texto sobre festas típicas na Venezuela]</p>
-    <img src="[URL da imagem opcional]" alt="Imagem de festa" class="imagem-exemplo" />
+  <section id="festivales">
+    <h2>Festivales</h2>
+    <p>Venezuela es conocida por sus <strong>vibrantes fiestas</strong>, que mezclan fe, cultura y alegría popular. Una de las más famosas es el <strong>Carnaval de El Callao</strong>, reconocido por la UNESCO como Patrimonio Cultural Inmaterial de la Humanidad, con coloridos desfiles e influencia afrocaribeña. Otra celebración importante es la <strong>Feria de la Chinita</strong>, en el estado de Zulia, en honor a la Virgen de Chiquinquirá, con música, misas y fuegos artificiales. En Navidad, la tradicional <strong>Parranda Navideña</strong> anima las calles con cantos, tambores y bailes. Estas fiestas muestran la diversidad y la riqueza de las expresiones culturales venezolanas.</p>
+    <p><strong>Carnaval de El Callao</strong></p>
+    <img src="https://larepublica.cronosmedia.glr.pe/original/2023/02/12/63e924b6c04a7128e85ebd40.jpg" alt="Imagem de festa" class="imagem-exemplo" />
+    <p></p>
+    <p><strong>Feria de la Chinita</strong></p>
+    <img src="https://radio.otilca.org/wp-content/uploads/2024/09/la-chinita-1100x572-1-750x400-1.jpg" alt="Imagem de festa" class="imagem-exemplo" />
+    <p></p>
+    <p><strong>Parranda Navideña</strong></p>
+    <img src="https://conozcaelvallecito.wordpress.com/wp-content/uploads/2010/12/dsc07266.jpg" alt="Imagem de festa" class="imagem-exemplo" />
   </section>
 
   <section id="arte">
     <h2>Arte</h2>
-    <p>[Espaço para texto sobre a arte venezuelana]</p>
-    <img src="[URL da imagem opcional]" alt="Imagem de arte" class="imagem-exemplo" />
+    <p>El arte venezolano es rico en <u>expresiones intensas</u> y abarca una gran variedad de formas, cuadros, esculturas tradicionales, instalaciones y artes cinéticas, reflejando siempre el contexto <u>social y político</u> del país.</p>
+    <p><strong>Arte colonial (siglos XVI al XVIII):</strong> Principalmente pinturas y esculturas religiosas, realizadas para decorar iglesias y conventos. También se produjeron frescos y altares esculpidos, siguiendo el estilo barroco europeo.</p>
+    <img src="https://i.ytimg.com/vi/uhbvf0rVNYo/maxresdefault.jpg" alt="iglesia" class="imagem-exemplo" />
+    <p></p>
+    <p><strong>Romanticismo y paisajismo (siglo XIX):</strong> Pinturas de paisajes y escenas históricas, centradas en la naturaleza y la lucha por la independencia. Artistas como Cristóbal Rojas retrataron momentos de la guerra de independencia, mientras que Antonio Herrera Toro realizó hermosos paisajes nacionales.</p>
+    <img src="https://humanidades.com/wp-content/uploads/2018/11/arte-romanticismo-e1543065479893-800x400.jpg" alt="amizade" class="imagem-exemplo" />
+    <p></p>
+    <p><strong>Concretismo y arte cinético (años 1950):</strong> Esculturas e instalaciones interactivas basadas en formas geométricas y colores vibrantes, como las de Carlos Cruz-Diez y Jesús Rafael Soto, que exploraban el movimiento y la percepción visual.</p>
+    <img src="https://f.i.uol.com.br/fotografia/2019/11/07/15731728235dc4b6573ed50_1573172823_3x2_md.jpg" alt="cinetica" class="imagem-exemplo" />
+    <p></p>
+    <p><strong>Arte contemporáneo (desde finales del siglo XX hasta la actualidad):</strong> Obras en diversos formatos, incluyendo pintura, fotografía, vídeo e instalación. Artistas como Nelson Garrido y María José Rivas abordan temas como la identidad, la desigualdad y la migración.</p>
+    <img src="https://dasartes-media.storage.googleapis.com/dasartes.com.br/wp-content/uploads/2023/06/30224532/230331-Dan-Galeria-SP-Arte-ph-Ana-Pigosso-003-hr-Copy-2.jpg" alt="fios amarillos" class="imagem-exemplo" />
   </section>
 
-  <section id="religiao">
-    <h2>Religião</h2>
-    <p>[Espaço para texto sobre a religião na Venezuela]</p>
-    <img src="[URL da imagem opcional]" alt="Imagem religiosa" class="imagem-exemplo" />
+  <section id="religión">
+    <h2>Religión</h2>
+    <p>La religión en Venezuela es predominantemente <strong>cristiana</strong>, siendo el catolicismo la fe más practicada por la población. La religión tiene una fuerte influencia en las <strong>tradiciones culturales</strong> y en las fiestas populares del país. Uno de los ejemplos más destacados es la devoción a la <u>Virgen de Coromoto</u>, patrona de Venezuela, que se celebra con procesiones y misas especiales. También hay otras creencias, como el protestantismo evangélico, las religiones indígenas y las prácticas afrovenezolanas, como la santería y el espiritismo marialioncero, que mezclan elementos cristianos con tradiciones <u>africanas e indígenas</u>.</p>
+    <p><strong>La Virgen de Coromoto</strong></p>
+    <img src="https://gbvm.knoios.com/mmedia/19608/pueblo-venezolano-celebra-371-anos-de-la-virgen-de-coromoto-11434.jpg" alt="Imagem religiosa" class="imagem-exemplo" />
+    <p></p>
+    <p><strong>La Malioncera</strong></p>
+    <img src="https://a.files.bbci.co.uk/worldservice/live/assets/images/2010/12/15/101215151037_sorte_venezuela_226x170_davidfernandez_nocredit.jpg" alt="Imagem religiosa" class="imagem-exemplo" />
   </section>
 
   <section id="curiosidades">
     <h2>Curiosidades</h2>
-    <p>[Espaço para curiosidades sobre a Venezuela]</p>
-    <img src="[URL da imagem opcional]" alt="Imagem curiosa" class="imagem-exemplo" />
+    <p> - Venezuela es conocida como la "fábrica de reinas de belleza" por haber ganado ya <strong>siete títulos</strong> de Miss Universo.</p>
+    <img src="https://i.pinimg.com/736x/04/ea/9c/04ea9c5a0d1a47456d0567fdebeae66c.jpg" alt="Imagem curiosa1" class="imagem-exemplo" />
+    <p></p>
+    <p>- <strong>El teleférico de Mérida</strong>, en la ciudad del mismo nombre, es el más alto y uno de los más largos del mundo, alcanzando más de 4700 metros de altitud con unas vistas increíbles de los Andes venezolanos.</p>
+    <img src="https://www.puentedemando.com/wp-content/uploads/2017/02/telefc3a9rico-de-mc3a9rida-foto_-jesc3bas-lc3b3pez.jpg" alt="Imagem curiosa2" class="imagem-exemplo" />
+    <p></p>
+    <p>- <strong>Fuente de inspiración para la película de Pixar "Up - Altas Aventuras"</strong>, el Monte Roraima es una de las formaciones rocosas más antiguas del mundo, con paisajes surrealistas y místicos.</p>
+    <img src="https://aem-all.accor.com/content/dam/all/hubs/americas/latam/generic-images/all-magazine/monte-roraima-o-que-fazer-2024-2.jpg" alt="Imagem curiosa3" class="imagem-exemplo" />
+    <p></p>
+    <p>- <strong>Un consejo:</strong> si quieres ver la naturaleza en su forma más pura, conocer una cultura vibrante y explorar paisajes impresionantes, ¡Venezuela te espera!</p>
+    <img src="https://i.pinimg.com/736x/44/23/22/442322930fb50e174672d6f3ebb7f10f.jpg" alt="Imagem curiosa4" class="imagem-exemplo" />
   </section>
 
   <footer>
-    <p>Site sobre a Venezuela - Hecho por Alanis, Daniel, Maria e Natasha</p>
+    <p>Sitio web sobre Venezuela - Hecho por Alanis, Daniel, Maria, Marina y Natasha - S2</p>
   </footer>
+
+  <!-- Botão "voltar ao topo" -->
+  <a href="#top" class="voltar-topo" title="Voltar ao topo">&#8679;</a>
 
 </body>
 </html>
